@@ -1,0 +1,13 @@
+diff --git a/tools/Makefile b/tools/Makefile
+index 086c533eff..6c3f02d2ac 100644
+--- a/tools/Makefile
++++ b/tools/Makefile
+@@ -134,7 +134,7 @@ tools/_libfdt.so: $(LIBFDT_SRCS) $(LIBFDT_SWIG)
+ 	cp $(LIBFDT_SWIG) tools/.
+ 	unset CC; \
+ 	unset CROSS_COMPILE; \
+-	LDFLAGS="$(HOSTLDFLAGS)" CFLAGS= VERSION="u-boot-$(UBOOTVERSION)" \
++	CC="gcc" LDSHARED="gcc -shared -Wl,-O1 -Wall -Wstrict-prototypes" LDFLAGS="$(HOSTLDFLAGS)" CFLAGS= VERSION="u-boot-$(UBOOTVERSION)" \
+ 		CPPFLAGS="$(_hostc_flags)" OBJDIR=tools \
+ 		SOURCES="$(LIBFDT_SRCS) tools/libfdt.i" \
+ 		SWIG_OPTS="-I$(srctree)/lib/libfdt -I$(srctree)/lib" \

@@ -2,7 +2,7 @@ DESCRIPTION="Upstream's U-boot configured for sunxi devices"
 
 require recipes-bsp/u-boot/u-boot.inc
 
-DEPENDS += "dtc-native"
+DEPENDS += "bc-native dtc-native python-native swig-native"
 
 LICENSE = "GPLv2"
 
@@ -29,6 +29,7 @@ DEFAULT_PREFERENCE_sun8i="1"
 SRC_URI = "git://git.denx.de/u-boot.git;branch=master \
            file://boot.cmd \
            file://0001-sunxi-add-A20-OLinuXino-Lime2-eMMC-defconfig.patch \
+	   file://1000-swig-native-gcc.patch \
            "
 
 SRCREV = "d85ca029f257b53a96da6c2fb421e78a003a9943"
