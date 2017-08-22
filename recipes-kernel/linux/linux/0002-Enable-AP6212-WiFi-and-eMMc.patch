@@ -23,7 +23,7 @@ index 3ba081c1f555..3813156f5d35 100644
  };
  
  &mmc0 {
-@@ -85,6 +92,44 @@
+@@ -85,7 +92,44 @@
  	status = "okay";
  };
  
@@ -58,10 +58,10 @@ index 3ba081c1f555..3813156f5d35 100644
 +
 +&r_pio {
 +	wifi_en_nanopi_neo_air: wifi_en_pin {
-+		allwinner,pins = "PL7";
-+		allwinner,function = "gpio_out";
-+		allwinner,drive = <SUN4I_PINCTRL_10_MA>;
-+		allwinner,pull = <SUN4I_PINCTRL_NO_PULL>;
++		pins = "PL7";
++		function ="gpio_out";
++		drive-strength = <10>;
++		bias-disable;
 +	};
 +};
 +
