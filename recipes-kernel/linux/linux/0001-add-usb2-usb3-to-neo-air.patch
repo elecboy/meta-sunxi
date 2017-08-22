@@ -1,0 +1,50 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 03ff6f8b93ff..15188e8fc087 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -94,3 +94,19 @@
+ 	/* USB VBUS is always on */
+ 	status = "okay";
+ };
++
++&ehci1 {
++	status = "okay";
++};
++
++&ehci2 {
++	status = "okay";
++};
++
++&ohci1 {
++	status = "okay";
++};
++
++&ohci2 {
++	status = "okay";
++};
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+index 78f6c24952dd..948dbe59d363 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo.dts
+@@ -53,3 +53,21 @@
+ 	allwinner,leds-active-low;
+ 	status = "okay";
+ };
++
++
++&ehci1 {
++       status = "okay";
++};
++
++&ehci2 {
++       status = "okay";
++};
++
++&ohci1 {
++       status = "okay";
++};
++
++&ohci2 {
++       status = "okay";
++};
++
