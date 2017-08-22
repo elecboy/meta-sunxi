@@ -21,4 +21,5 @@ SRC_URI[sha256sum] = "d1b78c5ba88b6216bcd2e45cf567ebaff5cb2c8c7c6b73e1d8354dace9
 
 SRC_URI = "http://mirrors.163.com/kernel/linux/kernel/v4.x/linux-${PV}.tar.xz \
         file://defconfig \
-        "
+        file://0001-add-usb2-usb3-to-neo-air.patch \
+	"

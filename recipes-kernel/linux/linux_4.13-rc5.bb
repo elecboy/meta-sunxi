@@ -21,4 +21,5 @@ SRC_URI[sha256sum] = "431c1aa80a6df79c33430a51d79caf6627a94317fba13f5ef80f34b5ac
 
 SRC_URI = "https://git.kernel.org/torvalds/t/linux-${PV}.tar.gz \
         file://defconfig \
+        file://0001-add-usb2-usb3-to-neo-air.patch \
         "
