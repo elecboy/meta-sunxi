@@ -1,12 +1,15 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index 03ff6f8b93ff..623267b4eb23 100644
+index 03ff6f8b93ff..7d1aa9b743ed 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-@@ -72,6 +72,13 @@
+@@ -72,6 +72,16 @@
  			gpios = <&pio 0 10 GPIO_ACTIVE_HIGH>; /* PA10 */
  		};
  	};
 +
++	aliases {
++		serial3 = &uart3;
++		};
 +	wifi_pwrseq: wifi_pwrseq {
 +		compatible = "mmc-pwrseq-simple";
 +		pinctrl-names = "default";
@@ -16,7 +19,7 @@ index 03ff6f8b93ff..623267b4eb23 100644
  };
  
  &mmc0 {
-@@ -84,6 +91,44 @@
+@@ -84,6 +94,41 @@
  	status = "okay";
  };
  
@@ -49,13 +52,10 @@ index 03ff6f8b93ff..623267b4eb23 100644
 +       status = "okay";
 +};
 +
-+&r_pio {
-+       wifi_en_nanopi_neo_air: wifi_en_pin {
-+               pins = "PL7";
-+               function ="gpio_out";
-+               drive-strength = <10>;
-+               bias-disable;
-+       };
++&uart3 { /* Connected to AP6212 on Neo Air */
++	pinctrl-names = "default";
++	pinctrl-0 = <&uart3_pins>;
++	status = "okay";
 +};
 +
  &uart0 {
