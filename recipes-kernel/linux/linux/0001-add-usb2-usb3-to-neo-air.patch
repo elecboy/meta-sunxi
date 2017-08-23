@@ -1,5 +1,5 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index 03ff6f8b93ff..15188e8fc087 100644
+index 03ff6f8b93ff..c5fcb08da4bc 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 @@ -94,3 +94,19 @@
@@ -7,7 +7,7 @@ index 03ff6f8b93ff..15188e8fc087 100644
  	status = "okay";
  };
 +
-+&ehci1 {
++&ehci3 {
 +	status = "okay";
 +};
 +
@@ -15,7 +15,7 @@ index 03ff6f8b93ff..15188e8fc087 100644
 +	status = "okay";
 +};
 +
-+&ohci1 {
++&ohci3 {
 +	status = "okay";
 +};
 +
