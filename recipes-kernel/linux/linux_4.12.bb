@@ -18,6 +18,7 @@ RDEPENDS_kernel-base += "kernel-devicetree"
 
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
+SRCREV = "ef79e7bb67c80f0b20a8327692f590a54568eda5"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.12.y \
         file://defconfig \
         file://0001-add-usb2-usb3-to-neo-air.patch \
