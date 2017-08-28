@@ -28,8 +28,8 @@ UDEV_GE_141 ?= "1"
 
 # Set programmatically some variables during recipe parsing
 # See http://www.yoctoproject.org/docs/current/bitbake-user-manual/bitbake-user-manual.html#anonymous-python-funcions
-python __anonymous () {
-    kerneltype = d.getVar('KERNEL_IMAGETYPE')
-    kerneldt = get_dts(d, d.getVar('LINUX_VERSION'))
-    d.setVar("KERNEL_DEVICETREE", kerneldt)
-}
+#python __anonymous () {
+#    kerneltype = d.getVar('KERNEL_IMAGETYPE')
+#    kerneldt = get_dts(d, d.getVar('LINUX_VERSION'))
+#    d.setVar("KERNEL_DEVICETREE", kerneldt)
+#}
