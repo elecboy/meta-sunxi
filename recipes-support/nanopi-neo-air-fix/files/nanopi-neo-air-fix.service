@@ -6,8 +6,10 @@ After=network.target
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/sbin/iw wlan0 set power_save off
-ExecStart=/bin/echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-0/new_device
-ExecStart=/sbin/hwclock -r
+ExecStart=/usr/bin/bash -c '/bin/echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-0/new_device'
+ExecStart=/sbin/hwclock -s -f /dev/rtc1
+ExecStop=/sbin/hwclock -w -f /dev/rtc1
+ExecStop=/sbin/hwclock -w
 
 Restart=no
 
