@@ -24,6 +24,7 @@ SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.12.y
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
 	file://0002-Enable-AP6212-WiFi-and-eMMc.patch \
+	file://0003-enable-neo-air-i2c0.patch \
 	"
 S = "${WORKDIR}/git"
 

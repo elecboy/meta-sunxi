@@ -1,0 +1,15 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 03ff6f8b93ff..9fcbc51435bc 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -90,6 +90,10 @@
+ 	status = "okay";
+ };
+ 
++&i2c0 {
++      status = "okay";
++};
++
+ &usbphy {
+ 	/* USB VBUS is always on */
+ 	status = "okay";
