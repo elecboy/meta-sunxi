@@ -13,7 +13,7 @@ SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.12.y
 	"
 PE = "1"
 PV = "${LINUX_VERSION}+git${SRCPV}"
-
+S = "${WORKDIR}/git"
 inherit kernel
 
 require recipes-kernel/linux/linux-dtb.inc
