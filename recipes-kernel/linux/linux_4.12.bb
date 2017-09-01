@@ -13,13 +13,13 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.12.9"
+LINUX_VERSION ?= "4.12.10"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "ef79e7bb67c80f0b20a8327692f590a54568eda5"
+SRCREV = "29a81e20c5f8f52d460a9d87938f482736201730"
 SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.12.y \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
