@@ -30,6 +30,7 @@ SRC_URI = "git://git.denx.de/u-boot.git;branch=master \
            file://boot.cmd \
            file://0001-sunxi-add-A20-OLinuXino-Lime2-eMMC-defconfig.patch \
 	   file://0002-add-nanopi-neo-air-emmc.patch \
+	   file://0003-sunxi-h3-Fix-PLL1-setup-to-never-use-dividers.patch \
 	   file://1000-swig-native-gcc.patch \
            "
 
