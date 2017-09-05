@@ -1,5 +1,5 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index 8bc09364a034..cc232291273a 100644
+index 8bc09364a034..04c27a979112 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 @@ -45,6 +45,8 @@
@@ -94,3 +94,14 @@ index 8bc09364a034..cc232291273a 100644
  };
  
  &mmc0 {
+@@ -130,6 +208,10 @@
+                drive-strength = <10>;
+                bias-disable;
+        };
++       vdd_cpux_r_opc: regulator_pins@0 {
++               pins = "PL6";
++               function = "gpio_out";
++       };
+ };
+ 
+ &uart3 { /* Connected to AP6212 on Neo Air */
