@@ -13,21 +13,19 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.12.10"
+LINUX_VERSION ?= "4.12.8"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "29a81e20c5f8f52d460a9d87938f482736201730"
-SRC_URI = "git://github.com/raspberrypi/linux.git;protocol=git;branch=rpi-4.12.y \
+SRCREV = "0d03cd94e49cc79b34b0a396b590cc2e30f063b4"
+SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.12 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
 	file://0002-Enable-AP6212-WiFi-and-eMMc.patch \
 	file://0003-enable-neo-air-i2c0.patch \
 	file://0004-add-cpufreq-to-neo-air.patch \
-	file://0005-add-cpu-freq-to-h3.patch \
-	file://0006-add-cpu-freq-to-h3-h5.patch \
 	"
 S = "${WORKDIR}/git"
 
