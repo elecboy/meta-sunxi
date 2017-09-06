@@ -6,8 +6,7 @@ After=network.target
 Type=oneshot
 RemainAfterExit=yes
 ExecStart=/usr/sbin/iw wlan0 set power_save off
-ExecStart=/usr/bin/cpufreq-set -u 912MHz
-ExecStart=/usr/bin/cpufreq-set -g performance
+ExecStart=/usr/bin/cpufreq-set -d 480MHz -u 912MHz -g performance
 
 Restart=no
 
