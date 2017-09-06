@@ -13,7 +13,7 @@ SRC_URI = "\
     file://nanopi-neo-air-cpufreq-wlan.service \
     file://GPL-2 \
 "
-SRC_URI[md5sum] = "f426102c3355fbf73f94f320081e471f"
+SRC_URI[md5sum] = "562b0c813f8cebb2850725755abceeae"
 
 S = "${WORKDIR}"
 
