@@ -1,0 +1,15 @@
+[Unit]
+Description=mtsports nanopi-neo-air board func fix
+After=network.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/sbin/iw wlan0 set power_save off
+ExecStart=/usr/bin/cpufreq-set -u 912MHz
+ExecStart=/usr/bin/cpufreq-set -g performance
+
+Restart=no
+
+[Install]
+WantedBy=multi-user.target

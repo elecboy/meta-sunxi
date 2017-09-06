@@ -1,14 +1,12 @@
 [Unit]
-Description=mtsports nanopi-neo-air board func fix
+Description=mtsports nanopi-neo-air board rtc fix
 After=network.target
 
 [Service]
 Type=oneshot
 RemainAfterExit=yes
 ExecStartPre=/bin/bash -c '/bin/echo ds3231 0x68 > /sys/class/i2c-adapter/i2c-0/new_device'
-ExecStart=/usr/sbin/iw wlan0 set power_save off
 ExecStart=/sbin/hwclock -s -f /dev/rtc1
-ExecStart=/usr/bin/cpufreq-set -u 912MHz
 ExecStop=/sbin/hwclock -w -f /dev/rtc1
 ExecStop=/sbin/hwclock -w
 
