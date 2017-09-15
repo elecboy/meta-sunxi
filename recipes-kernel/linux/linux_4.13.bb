@@ -26,6 +26,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 
 	file://0002-Enable-AP6212-WiFi-and-eMMc.patch \
 	file://0003-enable-neo-air-i2c0.patch \
 	file://0004-add-cpufreq-to-neo-air.patch \
+	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
 	"
 S = "${WORKDIR}/git"
 

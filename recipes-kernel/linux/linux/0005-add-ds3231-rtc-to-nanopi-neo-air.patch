@@ -1,0 +1,25 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 8be49fa6b26f..488793ae124a 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -54,6 +54,7 @@
+ 
+ 	aliases {
+ 		serial0 = &uart0;
++		rtc1 = &ds3231;
+ 	};
+ 
+ 	chosen {
+@@ -228,6 +229,12 @@
+ 
+ &i2c0 {
+       status = "okay";
++       ds3231: rtc@68 {
++               compatible = "maxim,ds3231";
++               reg = <0x68>;
++               status = "enable";
++               wakeup-source;
++      };
+ };
+ 
+ &usbphy {
