@@ -17,7 +17,7 @@ index 8be49fa6b26f..488793ae124a 100644
 +       ds3231: rtc@68 {
 +               compatible = "maxim,ds3231";
 +               reg = <0x68>;
-+               status = "enable";
++               status = "ok";
 +               wakeup-source;
 +      };
  };
