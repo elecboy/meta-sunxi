@@ -1,0 +1,1 @@
+SUBSYSTEM=="rtc", DRIVERS=="rtc-ds1307", SYMLINK="rtc", OPTIONS+="link_priority=100"

@@ -8,7 +8,7 @@ index 488793ae124a..bcd49d3e4a4b 100644
  	};
 +        power_ctrl: power_ctrl {
 +                compatible = "gpio-poweroff";
-+                gpios = <&pio 0 6 GPIO_ACTIVE_LOW>; /* PA6 */
++                gpios = <&pio 0 6 GPIO_ACTIVE_HIGH>; /* PA6 */
 +        };
  
          vdd_cpux: gpio-regulator {
