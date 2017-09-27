@@ -32,4 +32,4 @@ SERIAL_CONSOLE ?= "115200 ttyS0"
 MACHINE_FEATURES ?= "alsa apm keyboard rtc serial screen usbgadget usbhost vfat"
 
 #libgfortran use low version
-PREFERRED_VERSION_libgfortran ?= "linaro-5.3%"
+#PREFERRED_VERSION_libgfortran ?= "linaro-5.3%"
