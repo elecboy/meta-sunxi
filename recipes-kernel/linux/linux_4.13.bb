@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.13.3"
+LINUX_VERSION ?= "4.13.4"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -28,10 +28,10 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 
 	file://0004-add-cpufreq-to-neo-air.patch \
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
 	file://0006-add-power-ctrl.patch \
-	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.13.3.xz;name=patch;apply=yes \
+	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.13.4.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "6390ac139b79b5b4f199cd63673c9b45"
-SRC_URI[patch.sha256sum] = "bfebd5121512f76ed835223679fc11fc7826aabc31233cefb522e0e1b515d3fe"
+SRC_URI[patch.md5sum] = "a6821caefb4b909b27916b2fbe2d5bf9"
+SRC_URI[patch.sha256sum] = "1e34c35dfbd3b7451a7b3eb93c5e342acc006b5d1906b5e542a8f203723bb8d6"
 
 S = "${WORKDIR}/git"
 
