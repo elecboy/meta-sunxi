@@ -19,7 +19,7 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "c173fe35989ed23e9f14379550a056969ef6140c"
+SRCREV = "ec528e925ffa16164d2ead4fa9586ab47c014dc8"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
@@ -28,10 +28,10 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 
 	file://0004-add-cpufreq-to-neo-air.patch \
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
 	file://0006-add-power-ctrl.patch \
-	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.13.7.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "c098b8203d755d03e066bcd7afe42284"
-SRC_URI[patch.sha256sum] = "0fe89c96e956efbded576214eef0c8e43cabe41dfca245e3ebb79fff9bc8715d"
+#https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.13.7.xz;name=patch;apply=yes \
+#SRC_URI[patch.md5sum] = "c098b8203d755d03e066bcd7afe42284"
+#SRC_URI[patch.sha256sum] = "0fe89c96e956efbded576214eef0c8e43cabe41dfca245e3ebb79fff9bc8715d"
 
 S = "${WORKDIR}/git"
 
