@@ -1,0 +1,25 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 1fe7321f00f1..16247c524fef 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -55,6 +55,7 @@
+ 	aliases {
+ 		serial0 = &uart0;
+ 		rtc1 = &ds3231;
++		rtc2 = &rx8025;
+ 	};
+ 
+ 	chosen {
+@@ -239,6 +240,12 @@
+                status = "ok";
+                wakeup-source;
+       };
++       rx8025: rtc@32 {
++               compatible = "epson,rx8025";
++               reg = <0x32>;
++               status = "ok";
++               wakeup-source;
++      };
+ };
+ 
+ &usbphy {
