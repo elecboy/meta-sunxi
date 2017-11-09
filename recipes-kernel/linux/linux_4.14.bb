@@ -13,13 +13,13 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.0-rc5"
+LINUX_VERSION ?= "4.14.0-rc8"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "17697a51bd723d8d8e99e4954eb839ef7c1a0ad5"
+SRCREV = "00f698f9c96dfb58f3c8c2cde10866907e13b137"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
