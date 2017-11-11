@@ -19,7 +19,7 @@ PV = "${LINUX_VERSION}+git${SRCPV}"
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "00f698f9c96dfb58f3c8c2cde10866907e13b137"
+SRCREV = "9fd9dc3ddee7addb481988363c59fe745a8cb04e"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \

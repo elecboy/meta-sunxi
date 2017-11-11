@@ -13,13 +13,13 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.13.7"
+LINUX_VERSION ?= "4.13.12"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "ec528e925ffa16164d2ead4fa9586ab47c014dc8"
+SRCREV = "f26cf4c28a4abe6460334a342f62ffa0d7059171"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
@@ -28,6 +28,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 
 	file://0004-add-cpufreq-to-neo-air.patch \
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
 	file://0006-add-power-ctrl.patch \
+	file://0007-add-rx8025-rtc-to-nanopi-neo-air.patch \
 	"
 #https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.13.7.xz;name=patch;apply=yes \
 #SRC_URI[patch.md5sum] = "c098b8203d755d03e066bcd7afe42284"
