@@ -1,0 +1,20 @@
+---
+ drivers/rtc/rtc-rx8010.c | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/drivers/rtc/rtc-rx8010.c b/drivers/rtc/rtc-rx8010.c
+index 1ed3403..f948f75 100644
+--- a/drivers/rtc/rtc-rx8010.c
++++ b/drivers/rtc/rtc-rx8010.c
+@@ -24,7 +24,6 @@
+ #define RX8010_MDAY    0x14
+ #define RX8010_MONTH   0x15
+ #define RX8010_YEAR    0x16
+-#define RX8010_YEAR    0x16
+ #define RX8010_RESV17  0x17
+ #define RX8010_ALMIN   0x18
+ #define RX8010_ALHOUR  0x19
+-- 
+2.7.4
+
+  
