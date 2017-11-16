@@ -1,5 +1,5 @@
 diff --git a/drivers/rtc/rtc-rx8010.c b/drivers/rtc/rtc-rx8010.c
-index 1ed3403ff8ac..667a2ed51553 100644
+index 1ed3403ff8ac..148aa6912663 100644
 --- a/drivers/rtc/rtc-rx8010.c
 +++ b/drivers/rtc/rtc-rx8010.c
 @@ -432,6 +432,9 @@ static int rx8010_ioctl(struct device *dev, unsigned int cmd, unsigned long arg)
@@ -31,19 +31,16 @@ index 1ed3403ff8ac..667a2ed51553 100644
  
  	if (!i2c_check_functionality(adapter, I2C_FUNC_SMBUS_BYTE_DATA
  		| I2C_FUNC_SMBUS_I2C_BLOCK)) {
-@@ -469,16 +484,29 @@ static int rx8010_probe(struct i2c_client *client,
+@@ -469,16 +484,22 @@ static int rx8010_probe(struct i2c_client *client,
  
  		if (err) {
  			dev_err(&client->dev, "unable to request IRQ\n");
 +                        device_set_wakeup_capable(&client->dev, false);
  			client->irq = 0;
- 		} else {
+-		} else {
 -			rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
 -			rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
 -			rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
-+		  //			rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
-+		  //			rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
-+		  //			rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
  		}
 -	}
  
@@ -60,9 +57,6 @@ index 1ed3403ff8ac..667a2ed51553 100644
 +	    rx8010->rtc = devm_rtc_device_register(&client->dev, client->name,
 +						   &rx8010_rtc_ops, THIS_MODULE);
 +	    rx8010->rtc->uie_unsupported = 1;
-+	    //	    rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
-+	    //	    rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
-+	    //	    rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
 +	}
  
  	if (IS_ERR(rx8010->rtc)) {
