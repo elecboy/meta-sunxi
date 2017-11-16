@@ -1,5 +1,5 @@
 diff --git a/drivers/rtc/rtc-rx8010.c b/drivers/rtc/rtc-rx8010.c
-index 1ed3403ff8ac..9bf184bbb7de 100644
+index 1ed3403ff8ac..61d0675c04ca 100644
 --- a/drivers/rtc/rtc-rx8010.c
 +++ b/drivers/rtc/rtc-rx8010.c
 @@ -441,6 +441,18 @@ static int rx8010_probe(struct i2c_client *client,
@@ -21,7 +21,14 @@ index 1ed3403ff8ac..9bf184bbb7de 100644
  
  	if (!i2c_check_functionality(adapter, I2C_FUNC_SMBUS_BYTE_DATA
  		| I2C_FUNC_SMBUS_I2C_BLOCK)) {
-@@ -475,10 +487,23 @@ static int rx8010_probe(struct i2c_client *client,
+@@ -469,16 +481,29 @@ static int rx8010_probe(struct i2c_client *client,
+ 
+ 		if (err) {
+ 			dev_err(&client->dev, "unable to request IRQ\n");
++                        device_set_wakeup_capable(&client->dev, false);
+ 			client->irq = 0;
+ 		} else {
+ 			rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
  			rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
  			rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
  		}
@@ -36,11 +43,10 @@ index 1ed3403ff8ac..9bf184bbb7de 100644
 +	    dev_info(&client->dev,
 +		     "'wakeup-source' is set, request for an IRQ is disabled!\n");
 +	    /* We cannot support UIE mode if we do not have an IRQ line */
-+
++	    device_set_wakeup_capable(&client->dev, true);
 +	    rx8010->rtc = devm_rtc_device_register(&client->dev, client->name,
 +						   &rx8010_rtc_ops, THIS_MODULE);
 +	    rx8010->rtc->uie_unsupported = 1;
-+
 +	    rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
 +	    rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
 +	    rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
