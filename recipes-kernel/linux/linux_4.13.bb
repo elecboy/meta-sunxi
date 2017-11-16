@@ -29,7 +29,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.13 
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
 	file://0006-add-power-ctrl.patch \
 	file://0007-add-rx8010-rtc-to-nanopi-neo-air.patch \
-	file://0008-fix-rx8010-rtc-alarm.patch \
+	file://0008-fix-rx8010-rtc-wakeup.patch \
         file://0009-RX8010-RESV31-fix.patch \
         file://0010-RX8010-YEAR-duplicate-define.patch \
         file://0011-RX8010-reset-err-variable-to-account.patch \

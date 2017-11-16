@@ -1,0 +1,48 @@
+diff --git a/drivers/rtc/rtc-rx8010.c b/drivers/rtc/rtc-rx8010.c
+index 1ed3403ff8ac..b2892939eebf 100644
+--- a/drivers/rtc/rtc-rx8010.c
++++ b/drivers/rtc/rtc-rx8010.c
+@@ -441,6 +441,18 @@ static int rx8010_probe(struct i2c_client *client,
+ 	struct i2c_adapter *adapter = to_i2c_adapter(client->dev.parent);
+ 	struct rx8010_data *rx8010;
+ 	int err = 0;
++	bool			rx8010_can_wakeup_device = false;
++	/*
++	 * For devices with no IRQ directly connected to the SoC, the RTC chip
++	 * can be forced as a wakeup source by stating that explicitly in
++	 * the device's .dts file using the "wakeup-source" boolean property.
++	 * If the "wakeup-source" property is set, don't request an IRQ.
++	 * This will guarantee the 'wakealarm' sysfs entry is available on the device,
++	 * if supported by the RTC.
++	 */
++	if (of_property_read_bool(&client->dev.of_node,
++						 "wakeup-source"))
++	  rx8010_can_wakeup_device = true;
+ 
+ 	if (!i2c_check_functionality(adapter, I2C_FUNC_SMBUS_BYTE_DATA
+ 		| I2C_FUNC_SMBUS_I2C_BLOCK)) {
+@@ -475,10 +487,22 @@ static int rx8010_probe(struct i2c_client *client,
+ 			rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
+ 			rx8010_rtc_ops.alarm_irq_enable = rx8010_alarm_irq_enable;
+ 		}
++
++		rx8010->rtc = devm_rtc_device_register(&client->dev, client->name,
++						       &rx8010_rtc_ops, THIS_MODULE);
+ 	}
++	else if (rx8010_can_wakeup_device) {
++	    dev_info(&client->dev,
++		     "'wakeup-source' is set, request for an IRQ is disabled!\n");
++	    /* We cannot support UIE mode if we do not have an IRQ line */
++
++	    rx8010->rtc = devm_rtc_device_register(&client->dev, client->name,
++						   &rx8010_rtc_ops, THIS_MODULE);
++	    rx8010->rtc->uie_unsupported = 1;
+ 
+-	rx8010->rtc = devm_rtc_device_register(&client->dev, client->name,
+-		&rx8010_rtc_ops, THIS_MODULE);
++	    rx8010_rtc_ops.read_alarm = rx8010_read_alarm;
++	    rx8010_rtc_ops.set_alarm = rx8010_set_alarm;
++	}
+ 
+ 	if (IS_ERR(rx8010->rtc)) {
+ 		dev_err(&client->dev, "unable to register the class device\n");
