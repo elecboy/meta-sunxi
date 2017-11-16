@@ -5,8 +5,8 @@ index 1fe7321f00f1..16247c524fef 100644
 @@ -55,6 +55,7 @@
  	aliases {
  		serial0 = &uart0;
- 		rtc1 = &ds3231;
-+		rtc2 = &rx8010;
+ 		rtc2 = &ds3231;
++		rtc1 = &rx8010;
  	};
  
  	chosen {
