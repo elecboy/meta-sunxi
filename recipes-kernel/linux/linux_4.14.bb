@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.2"
+LINUX_VERSION ?= "4.14.3"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -34,10 +34,10 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0010-RX8010-YEAR-duplicate-define.patch \
         file://0011-RX8010-reset-err-variable-to-account.patch \
 	file://0012-enable-neo-air-uart1.patch \
-	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-4.14.2.xz;name=patch;apply=yes \
+	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "92f71f8a1c5c28b7c8b4a95f6c9dd048"
-SRC_URI[patch.sha256sum] = "2dc86272e55d31c55bdeaa47b3d44fbd6235a396e37d82c2b47aa27f6ba82ee3"
+SRC_URI[patch.md5sum] = "0732df415000b9def639a69996df6497"
+SRC_URI[patch.sha256sum] = "e13995c11d0c2d3379c887666dbfaca619200fb8853db6d5d67f97d47fd959b7"
 
 S = "${WORKDIR}/git"
 
