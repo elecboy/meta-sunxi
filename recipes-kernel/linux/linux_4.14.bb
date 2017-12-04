@@ -34,6 +34,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0010-RX8010-YEAR-duplicate-define.patch \
         file://0011-RX8010-reset-err-variable-to-account.patch \
 	file://0012-enable-neo-air-uart1.patch \
+	file://0013-add-cw2015-driver.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
 SRC_URI[patch.md5sum] = "0732df415000b9def639a69996df6497"
