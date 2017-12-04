@@ -8,7 +8,7 @@ index 5ab90c1f3f7c..4880cefc29ca 100644
  
 +config BATTERY_CW2015
 +	tristate "CW2015 Battery Fuel Guage driver"
-+	depends on I2C_GPIO
++	depends on I2C
 +	help
 +	  Say Y to enable support CW2015 battery fuel guage driver for
 +	  Lithium-ion(Li+) based batteries in handheld and portable devices.
