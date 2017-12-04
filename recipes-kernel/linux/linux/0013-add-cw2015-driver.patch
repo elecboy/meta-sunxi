@@ -1,5 +1,5 @@
 diff --git a/drivers/power/supply/Kconfig b/drivers/power/supply/Kconfig
-index 5ab90c1f3f7c..4880cefc29ca 100644
+index 5ab90c1f3f7c..1f4689566945 100644
 --- a/drivers/power/supply/Kconfig
 +++ b/drivers/power/supply/Kconfig
 @@ -384,6 +384,13 @@ config BATTERY_RX51
@@ -8,7 +8,7 @@ index 5ab90c1f3f7c..4880cefc29ca 100644
  
 +config BATTERY_CW2015
 +	tristate "CW2015 Battery Fuel Guage driver"
-+	depends on I2C_GPIO
++	depends on I2C
 +	help
 +	  Say Y to enable support CW2015 battery fuel guage driver for
 +	  Lithium-ion(Li+) based batteries in handheld and portable devices.
@@ -1648,3 +1648,47 @@ index 000000000000..ee1d9ee968d8
 +MODULE_AUTHOR("xhc<xhc@rock-chips.com>");
 +MODULE_DESCRIPTION("cw2015/cw2013 battery driver");
 +MODULE_LICENSE("GPL");
+diff --git a/include/linux/power/cw2015_battery.h b/include/linux/power/cw2015_battery.h
+new file mode 100644
+index 000000000000..0296bad31b1c
+--- /dev/null
++++ b/include/linux/power/cw2015_battery.h
+@@ -0,0 +1,38 @@
++/*
++ * RockChip ADC Battery Driver
++ * Copyright (C) 2012, RockChip
++ *
++ * Authors: xuhuicong <xhc@rock-chips.com>
++ *
++ * Based on rk30_adc_battery.c
++
++ * This program is free software; you can redistribute it and/or modify
++ * it under the terms of the GNU General Public License version 2 as
++ * published by the Free Software Foundation.
++ *
++ */
++
++#ifndef CW2015_BATTERY_H
++#define CW2015_BATTERY_H
++
++#define SIZE_BATINFO    64
++
++extern void rk_send_wakeup_key(void);
++
++struct cw_bat_platform_data {
++	int is_dc_charge;
++	int dc_det_pin;
++	int dc_det_level;
++
++	int is_usb_charge;
++	int chg_mode_sel_pin;
++	int chg_mode_sel_level;
++
++	int bat_low_pin;
++	int bat_low_level;
++	int chg_ok_pin;
++	int chg_ok_level;
++	u32 *cw_bat_config_info;
++};
++
++#endif
