@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.4"
+LINUX_VERSION ?= "4.14.5"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -37,8 +37,8 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0013-add-cw2015-driver.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "67bd52ec7993bec22ce729d4146d1476"
-SRC_URI[patch.sha256sum] = "e9dcf9aad5977289940cd6e3762af02b87a725ba6c1a9f4af86958dc621e3a84"
+SRC_URI[patch.md5sum] = "10bdd04b537db8c9bad90ea8ef2a89d2"
+SRC_URI[patch.sha256sum] = "d86eb2fd1c424fec9fbb12afacf7b783756651f5d7d0cf7ac71c3fbbbedddc9c"
 
 S = "${WORKDIR}/git"
 
