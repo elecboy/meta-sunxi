@@ -27,14 +27,12 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0003-enable-neo-air-i2c0.patch \
 	file://0004-add-cpufreq-to-neo-air.patch \
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
-	file://0006-add-power-ctrl.patch \
 	file://0007-add-rx8010-rtc-to-nanopi-neo-air.patch \
 	file://0008-fix-rx8010-rtc-wakeup.patch \
 	file://0009-RX8010-RESV31-fix.patch \
 	file://0010-RX8010-YEAR-duplicate-define.patch \
         file://0011-RX8010-reset-err-variable-to-account.patch \
 	file://0012-enable-neo-air-uart1.patch \
-	file://0013-add-cw2015-driver.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
 SRC_URI[patch.md5sum] = "10bdd04b537db8c9bad90ea8ef2a89d2"
