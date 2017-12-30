@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.9"
+LINUX_VERSION ?= "4.14.10"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -35,7 +35,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0012-enable-neo-air-uart1.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "623ac9e64733d008d11e8d35d17d99f8"
-SRC_URI[patch.sha256sum] = "5edc955bb67b04c7ed426b1df17a3e322e32ad9fdda9c6abb53ab6eca7faf704"
+SRC_URI[patch.md5sum] = "986c6711da939de924926a7f5033218d"
+SRC_URI[patch.sha256sum] = "16f560aa713b46c707f04a226f67dc31fdd280aae57dd19e0413d61df5336c74"
 
 S = "${WORKDIR}/git"
