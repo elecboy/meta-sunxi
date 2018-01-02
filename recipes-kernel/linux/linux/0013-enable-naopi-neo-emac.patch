@@ -1,0 +1,14 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index 66bb2fd31de7..029e86c9eeb4 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -274,3 +274,9 @@
+ &ohci2 {
+ 	status = "okay";
+ };
++&emac {
++        phy-handle = <&int_mii_phy>;
++        phy-mode = "mii";
++        allwinner,leds-active-low;
++        status = "okay";
++};
