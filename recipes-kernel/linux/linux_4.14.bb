@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.10"
+LINUX_VERSION ?= "4.14.11"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -36,7 +36,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0013-enable-naopi-neo-emac.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "986c6711da939de924926a7f5033218d"
-SRC_URI[patch.sha256sum] = "16f560aa713b46c707f04a226f67dc31fdd280aae57dd19e0413d61df5336c74"
+SRC_URI[patch.md5sum] = "1d114c38559d63decd246e4f76ef6ba8"
+SRC_URI[patch.sha256sum] = "f588b62d7ee1d2ebdc24afa0e256ff2f8812d5cab3bf572bf02e7c4525922bf9"
 
 S = "${WORKDIR}/git"
