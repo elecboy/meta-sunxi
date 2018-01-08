@@ -1,0 +1,16 @@
+diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+index c3b4ee399409..735ee0ba0f5b 100644
+--- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
++++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
+@@ -275,6 +275,11 @@
+ 	status = "okay";
+ };
+ 
++&usb_otg {
++        dr_mode = "otg";
++        status = "okay";
++};
++
+ &emac {
+         phy-handle = <&int_mii_phy>;
+         phy-mode = "mii";
