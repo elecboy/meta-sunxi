@@ -1,8 +1,21 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index 029e86c9eeb4..0a03f5a5a787 100644
+index 029e86c9eeb4..8965a756ebb2 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-@@ -274,6 +274,12 @@
+@@ -255,8 +255,10 @@
+ };
+ 
+ &usbphy {
+-	/* USB VBUS is always on */
+-	status = "okay";
++        /* USB Type-A port's VBUS is always on */
++        usb0_id_det-gpios = <&pio 6 12 GPIO_ACTIVE_HIGH>; /* PG12 */
++        usb0_vbus-supply = <&reg_usb0_vbus>;
++        status = "okay";
+ };
+ 
+ &ehci3 {
+@@ -274,6 +276,12 @@
  &ohci2 {
  	status = "okay";
  };
