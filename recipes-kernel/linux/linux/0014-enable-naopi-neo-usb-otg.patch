@@ -1,14 +1,15 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index 029e86c9eeb4..1c736436b623 100644
+index 029e86c9eeb4..0a03f5a5a787 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-@@ -274,6 +274,11 @@
+@@ -274,6 +274,12 @@
  &ohci2 {
  	status = "okay";
  };
 +
 +&usb_otg {
-+        status = "okay";
++	dr_mode = "otg";
++	status = "okay";
 +};
 +
  &emac {
