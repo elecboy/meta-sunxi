@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.13"
+LINUX_VERSION ?= "4.14.14"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -37,7 +37,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0014-enable-naopi-neo-usb-otg.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "9ec660112113d68ab28ed0cac4ea3e91"
-SRC_URI[patch.sha256sum] = "ce897f467e80452f29d7a7a8809e8585ea12192a2c32e4d18578f64b043e802e"
+SRC_URI[patch.md5sum] = "b688cbee616f4b35ab08b953519eda55"
+SRC_URI[patch.sha256sum] = "62d656b98f0dc143216cb9650bd9b96cd83d92925731e9f0bec5eb4d6358e603"
 
 S = "${WORKDIR}/git"
