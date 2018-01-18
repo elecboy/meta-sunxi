@@ -35,6 +35,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0012-enable-neo-air-uart1.patch \
 	file://0013-enable-naopi-neo-emac.patch \
 	file://0014-enable-naopi-neo-usb-otg.patch \
+	file://0015-fix-pcf8563-alarm-enable.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
 SRC_URI[patch.md5sum] = "b688cbee616f4b35ab08b953519eda55"
