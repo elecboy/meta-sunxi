@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.16"
+LINUX_VERSION ?= "4.14.17"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -39,7 +39,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0016-add-pcf8563-rtc-to-nanopi-neo-air.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "f4dac9cfc9fb835b6c0a13fe6a2521ad"
-SRC_URI[patch.sha256sum] = "35a107a45a6e8884d3ab442f9845007e3fcf9998441bf2324a86e91056628fe7"
+SRC_URI[patch.md5sum] = "0f72d86a7829537e35ed1a47d0671939"
+SRC_URI[patch.sha256sum] = "1e62d56e37bd15daec7c3d20a605624e1e0a21c44856880c6dbe0c9e41cabfa8"
 
 S = "${WORKDIR}/git"
