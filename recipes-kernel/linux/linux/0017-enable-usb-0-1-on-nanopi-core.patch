@@ -1,8 +1,8 @@
 diff --git a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-index b3a528f59075..6393c0ba5960 100644
+index b3a528f59075..51a82be78a6a 100644
 --- a/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
 +++ b/arch/arm/boot/dts/sun8i-h3-nanopi-neo-air.dts
-@@ -273,22 +273,38 @@
+@@ -273,24 +273,40 @@
          status = "okay";
  };
  
@@ -41,5 +41,8 @@ index b3a528f59075..6393c0ba5960 100644
 +};
 +
  &usb_otg {
- 	dr_mode = "otg";
+-	dr_mode = "otg";
++	dr_mode = "host";
  	status = "okay";
+ };
+ 
