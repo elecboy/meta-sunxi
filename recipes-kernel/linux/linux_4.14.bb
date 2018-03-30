@@ -13,7 +13,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.14.30"
+LINUX_VERSION ?= "4.14.31"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -40,7 +40,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.14 
 	file://0017-enable-usb-0-1-on-nanopi-core.patch \
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch;apply=yes \
 	"
-SRC_URI[patch.md5sum] = "6f2fb5d7828270408f5d7359d211a3ee"
-SRC_URI[patch.sha256sum] = "c954ba12ebe4c226920f0c854890c502fa9f690bd63d8572a65147475f94ef09"
+SRC_URI[patch.md5sum] = "f38f720d3b47c0c777f70a12e071ca2d"
+SRC_URI[patch.sha256sum] = "fa05fc75fff3a07e9f642bcfc5b99e601e9c92e3c7543127509e2fa102c25a2c"
 
 S = "${WORKDIR}/git"
