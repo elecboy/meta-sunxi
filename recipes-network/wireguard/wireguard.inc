@@ -16,3 +16,4 @@ SRC_URI[md5sum] = "c5e81bfb1c8a1e2fa0710001c03f0b9d"
 SRC_URI[sha256sum] = "d9347786a9406ac276d86321ca64aadb1f0639cb0582c6e0519c634cf6e81157"
 
 S = "${WORKDIR}/WireGuard-${PV}/src/"
+RDEPENDS_${PN} = "bash"
