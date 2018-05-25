@@ -32,7 +32,6 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.16 
 	file://0012-enable-neo-air-uart1.patch \
 	file://0013-enable-naopi-neo-emac.patch \
 	file://0014-enable-naopi-neo-usb-otg.patch \
-	file://0015-fix-pcf8563-alarm-enable.patch \
 	file://0016-add-pcf8563-rtc-to-nanopi-neo-air.patch \
 	file://0017-enable-usb-0-1-on-nanopi-core.patch \
 	"
