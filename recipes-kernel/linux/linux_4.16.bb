@@ -37,8 +37,8 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.16 
 	file://0015-fix-pcf8563-alarm-enable.patch \
 	file://0016-add-pcf8563-rtc-to-nanopi-neo-air.patch \
 	file://0017-enable-usb-0-1-on-nanopi-core.patch \
-#	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch_11;apply=yes \
 	"
+#	https://cdn.kernel.org/pub/linux/kernel/v4.x/patch-${LINUX_VERSION}.xz;name=patch_11;apply=yes \
 #SRC_URI[patch_11.md5sum] = ""
 #SRC_URI[patch_11.sha256sum] = ""
 
