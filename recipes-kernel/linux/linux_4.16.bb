@@ -12,7 +12,7 @@ require linux.inc
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.16.13"
+LINUX_VERSION ?= "4.16.15"
 PV = "${LINUX_VERSION}+git${SRCPV}"
 
 # Pull in the devicetree files into the rootfs
@@ -38,6 +38,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.16 
 	https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.16.11-12.xz;name=patch_12;apply=yes \
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.16.12-13.xz;name=patch_13;apply=yes \
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.16.13-14.xz;name=patch_14;apply=yes \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.16.14-15.xz;name=patch_15;apply=yes \
 	"
 SRC_URI[patch_11.md5sum] = "d15e27bdd9744e6ec24660d4357ed3e7"
 SRC_URI[patch_11.sha256sum] = "3d90d995797c68bf8f6b4f45b1955ae6f23b3ed9aed695bddcb40549714f288d"
@@ -47,5 +48,7 @@ SRC_URI[patch_13.md5sum] = "1bba7113c49ca71f6cb9b02b4790f6c3"
 SRC_URI[patch_13.sha256sum] = "e2a317e65ffaf04762887f28c056c3cc5b7843c7d749f65932c5e44064ff84f8"
 SRC_URI[patch_14.md5sum] = "b40f3940fec7be0fd19a691d116ac3f1"
 SRC_URI[patch_14.sha256sum] = "4a568a147fb6b2eca9619e7bed85b8d6a63f88d54ba5dfc3ea32832c8f5747be"
+SRC_URI[patch_15.md5sum] = "553215763f88be242b611b4f32fb8921"
+SRC_URI[patch_15.sha256sum] = "dee1d31723b5fd6fdee424fb61714f48b9dfc14b389de1463652262b545ed1f9"
 
 S = "${WORKDIR}/git"
