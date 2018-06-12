@@ -1,12 +1,12 @@
 SECTION = "kernel"
 DESCRIPTION = "Mainline Linux kernel"
-LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://LICENSES/preferred/GPL-2.0;md5=74274e8a218423e49eefdea80bc55038"
-COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i)"
 
 inherit kernel
 
 require linux.inc
+LICENSE = "GPLv2"
+LIC_FILES_CHKSUM = "file://LICENSES/preferred/GPL-2.0;md5=74274e8a218423e49eefdea80bc55038"
+COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i)"
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
