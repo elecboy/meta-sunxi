@@ -22,7 +22,7 @@ SRCREV = "d57cd03dcb06d9f56fb8f895da16dbe59f8f4946"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 \
 	file://defconfig \
 	file://0001-add-usb2-usb3-to-neo-air.patch \
-	file://0002-Enable-AP6212-WiFi-and-eMMc.patch \
+	file://0002-Enable-AP6212-WiFi-and-eMMc_4_17.patch \
 	file://0003-enable-neo-air-i2c0.patch \
 	file://0004-add-cpufreq-to-neo-air.patch \
 	file://0005-add-ds3231-rtc-to-nanopi-neo-air.patch \
