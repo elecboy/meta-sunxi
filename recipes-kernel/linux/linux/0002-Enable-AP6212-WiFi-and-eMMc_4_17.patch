@@ -19,7 +19,7 @@ index 03ff6f8b93ff..dc7ddea6cba5 100644
  };
  
  &mmc0 {
-@@ -84,6 +94,50 @@
+@@ -84,6 +94,48 @@
  	status = "okay";
  };
  
