@@ -13,7 +13,8 @@ RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
 LINUX_VERSION ?= "4.17.2"
-PV = "${LINUX_VERSION}+git${SRCPV}"
+#PV = "${LINUX_VERSION}+git${SRCPV}"
+PV .= ""
 
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
