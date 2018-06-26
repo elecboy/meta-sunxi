@@ -12,7 +12,7 @@ COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i)"
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.17.2"
+LINUX_VERSION ?= "4.17.3"
 #PV = "${LINUX_VERSION}+git${SRCPV}"
 PV .= ""
 
@@ -35,9 +35,10 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 
   file://0011-add-pcf8563-rtc-to-nanopi-neo-air.patch \
   file://0012-enable-nanopi-neo-air-usb-otg.patch \
   file://0013-enable-usb-0-1-on-nanopi-neo-core.patch \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.2-3.xz;name=patch_3;apply=yes \
 "
 
-#SRC_URI[patch_1.md5sum] = "8f430fc5bf2fd5a6ec5da8b4a08473d8"
-#SRC_URI[patch_1.sha256sum] = "31f2f5309d99db632160538d43cf737166ae8b24c1b8091522ca1f9a804c25a1"
+SRC_URI[patch_3.md5sum] = "27e7a68e52258da8eb9cd05d3cc75a5c"
+SRC_URI[patch_3.sha256sum] = "2d83e50d35e7110e99256419badbe87a2435e95b7f5baafb9ceef5b2116290a4"
 
 S = "${WORKDIR}/git"
