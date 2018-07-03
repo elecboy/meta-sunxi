@@ -12,7 +12,7 @@ COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i)"
 RDEPENDS_kernel-base += "kernel-devicetree"
 KERNEL_EXTRA_ARGS += "LOADADDR=${UBOOT_ENTRYPOINT}"
 
-LINUX_VERSION ?= "4.17.3"
+#LINUX_VERSION ?= "4.17.3"
 #PV = "${LINUX_VERSION}+git${SRCPV}"
 PV .= ""
 
@@ -36,10 +36,13 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 
   file://0012-enable-nanopi-neo-air-usb-otg.patch \
   file://0013-enable-usb-0-1-on-nanopi-neo-core.patch \
   file://859086ae3636eae0bf9f0fbbce2daf4d41ae9474.patch \
-https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.2-3.xz;name=patch_3;apply=yes \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.2-3.xz;name=patch_3;apply=yes \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.3-4.xz;name=patch_4;apply=yes \
 "
 
 SRC_URI[patch_3.md5sum] = "27e7a68e52258da8eb9cd05d3cc75a5c"
 SRC_URI[patch_3.sha256sum] = "2d83e50d35e7110e99256419badbe87a2435e95b7f5baafb9ceef5b2116290a4"
+SRC_URI[patch_4.md5sum] = "600bb70356439073a59a8080ea178a1e"
+SRC_URI[patch_4.sha256sum] = "b31fba70f93052556cb4815c4ca8945efb398ee42649e5c46a47cd2c3576b180"
 
 S = "${WORKDIR}/git"
