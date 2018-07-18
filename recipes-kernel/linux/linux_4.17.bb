@@ -34,9 +34,12 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 
   file://0012-enable-nanopi-neo-air-usb-otg.patch \
   file://0013-enable-usb-0-1-on-nanopi-neo-core.patch \
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.6-7.xz;name=patch_7;apply=yes \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.7-8.xz;name=patch_8;apply=yes \
 "
 
 SRC_URI[patch_7.md5sum] = "fd8653be651469d850733565ac380d4f"
 SRC_URI[patch_7.sha256sum] = "03eafc27723600c70f51b09c1fe13a628e039b59c45623209ba6a36f71395701"
+SRC_URI[patch_8.md5sum] = "6812adbc6724fafb8ac419c26279b6ef"
+SRC_URI[patch_8.sha256sum] = "ff415b772df85ebb196120a95c827568272c08761c02b03442c182cff0b974a3"
 
 S = "${WORKDIR}/git"
