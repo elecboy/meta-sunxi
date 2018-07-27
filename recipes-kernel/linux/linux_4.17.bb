@@ -17,7 +17,7 @@ PV .= ""
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "a570debc4af184bc730dba70016cb42a74186045"
+SRCREV = "78970c0ba410ca28b9722ce873707d09581d4ec3"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 \
 	file://defconfig \
   file://0001-add-usb2-usb3-to-nanopi-neo-air.patch \
@@ -33,10 +33,10 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.17 
   file://0011-add-pcf8563-rtc-to-nanopi-neo-air.patch \
   file://0012-enable-nanopi-neo-air-usb-otg.patch \
   file://0013-enable-usb-0-1-on-nanopi-neo-core.patch \
-  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.9-10.xz;name=patch_10;apply=yes \
 "
 
-SRC_URI[patch_10.md5sum] = "59238725e4c4ff6b8bdd0b63d98ad293"
-SRC_URI[patch_10.sha256sum] = "bbafa3eaf88c2d90b497591ebeee9465422d65ecf778b050cbd93a0439c76d01"
+#https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.17.9-10.xz;name=patch_10;apply=yes
+#SRC_URI[patch_10.md5sum] = "59238725e4c4ff6b8bdd0b63d98ad293"
+#SRC_URI[patch_10.sha256sum] = "bbafa3eaf88c2d90b497591ebeee9465422d65ecf778b050cbd93a0439c76d01"
 
 S = "${WORKDIR}/git"
