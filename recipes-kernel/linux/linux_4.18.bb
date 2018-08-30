@@ -5,7 +5,7 @@ inherit kernel
 
 require linux.inc
 LICENSE = "GPLv2"
-LIC_FILES_CHKSUM = "file://LICENSES/preferred/GPL-2.0;md5=74274e8a218423e49eefdea80bc55038"
+LIC_FILES_CHKSUM = "file://LICENSES/preferred/GPL-2.0;md5=e6a75371ba4d16749254a51215d13f97"
 COMPATIBLE_MACHINE = "(sun4i|sun5i|sun7i|sun8i)"
 
 # Pull in the devicetree files into the rootfs
