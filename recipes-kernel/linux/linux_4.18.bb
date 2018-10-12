@@ -17,7 +17,7 @@ PV .= ""
 # Pull in the devicetree files into the rootfs
 RDEPENDS_kernel-base += "kernel-devicetree"
 
-SRCREV = "c61836fe0ec4c0b91bba9147d1dcc9afce8c293b"
+SRCREV = "42575490631c200287fa3f32a3d13a69c4916c5e"
 SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.18 \
 	file://defconfig \
   file://0001-add-usb2-usb3-to-nanopi-neo-air.patch \
