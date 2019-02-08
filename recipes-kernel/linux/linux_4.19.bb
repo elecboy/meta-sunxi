@@ -40,6 +40,7 @@ SRC_URI = "git://github.com/megous/linux.git;protocol=git;branch=orange-pi-4.19 
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.19.16-17.xz;name=patch_17;apply=yes \
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.19.17-18.xz;name=patch_18;apply=yes \
   https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.19.18-19.xz;name=patch_19;apply=yes \
+  https://cdn.kernel.org/pub/linux/kernel/v4.x/incr/patch-4.19.19-20.xz;name=patch_20;apply=yes \
 "
 
 SRC_URI[patch_14.md5sum] = "7f448c42ead61bb116d53134aa03cf25"
@@ -54,5 +55,7 @@ SRC_URI[patch_18.md5sum] = "54f0d18afee79c2b14005b3881ccab14"
 SRC_URI[patch_18.sha256sum] = "dd389d4f84a794dec0fea523fb351dadc0d0c37de1ed6c406d4f0584ca1b6d09"
 SRC_URI[patch_19.md5sum] = "c8214629dfd3bdce8d606907e105dbfb"
 SRC_URI[patch_19.sha256sum] = "b0af074faf9601581ba68f9120a80e09ce8b2982c4e2e586dc9dca840a82b336"
+SRC_URI[patch_20.md5sum] = "8689958359c4781733ea3cee5f0da315"
+SRC_URI[patch_20.sha256sum] = "19683cf95023c9e82f7eb1e268b494b5295f061c1126f0b2645b5458eac816e6"
 
 S = "${WORKDIR}/git"
